@@ -1,0 +1,7 @@
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+# Note: The versions above are compatible with CUDA 12.1
+
+numpy==2.1.2
+PIL==11.0.0
