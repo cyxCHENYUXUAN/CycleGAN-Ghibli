@@ -8,7 +8,7 @@ import numpy as np
 import torchvision
 
 class RealGhibliDataset(Dataset):
-    def __init__(self, ghibli_dir="../dataset/trainB_ghibli", real_dir="../dataset/trainA", transform=None):
+    def __init__(self, ghibli_dir="D:\\CycleGAN\\Data\\dataset\\trainB_ghibli", real_dir="D:\\CycleGAN\\Data\\dataset\\trainA", transform=None):
         self.ghibli_dir = ghibli_dir
         self.real_dir = real_dir
         self.transform = transform
@@ -35,8 +35,8 @@ class RealGhibliDataset(Dataset):
 #         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]) # 将图片像素值归一化到[-1, 1]
 #     ])
  
-#     GHIBLI_DIR = "../dataset/trainB_ghibli"
-#     REAL_DIR = "../dataset/trainA"
+#     GHIBLI_DIR = "D:\\CycleGAN\\Data\\dataset\\trainB_ghibli"
+#     REAL_DIR = "D:\\CycleGAN\\Data\\dataset\\trainA"
  
 #     train_dataset = RealGhibliDataset(
 #         ghibli_dir=GHIBLI_DIR,
