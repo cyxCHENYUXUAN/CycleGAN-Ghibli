@@ -28,7 +28,7 @@ class CycleGANLoss(nn.Module):
           生成器 (G) 的目标: 尽可能好地欺骗判别器，让判别器把他生成的样本误判为真实样本
         """
         self.gan_loss_fn = nn.MSELoss()
-        self.cycle_loss_ = nn.L1Loss()
+        self.cycle_loss_fn = nn.L1Loss()
         self.identity_loss_fn = nn.L1Loss()
         #定义标签，真实标签为1，虚假标签为0，用于计算对抗损失，反向传播更新参数时，不需要计算梯度
         #register_buffer是torch.nn.Module的一个方法，用于注册一个缓冲区，缓冲区是一个Tensor

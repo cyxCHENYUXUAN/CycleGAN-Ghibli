@@ -24,7 +24,7 @@ class RealGhibliDataset(Dataset):
         if self.transform:
             ghibli_img = self.transform(ghibli_img)
             real_img = self.transform(real_img)
-        return real_img, ghibli_img
+        return {'real': real_img, 'ghibli': ghibli_img}
     
 # if __name__ == '__main__':
  
