@@ -37,19 +37,25 @@ CycleGAN-Ghibli/
 
 ## 环境配置
 
-1. 创建并激活虚拟环境（推荐）：
+1. 克隆仓库：
+```bash
+git clone https://github.com/cyxCHENYUXUAN/CycleGAN-Ghibli.git
+cd CycleGAN-Ghibli
+```
+
+2. 创建并激活虚拟环境：
 ```bash
 python -m venv venv
 # Windows
 .\venv\Scripts\activate
 ```
 
-2. 安装依赖：
+3. 安装依赖：
 ```bash
 pip install -r requirements.txt
 ```
 
-3. 验证环境：
+4. 验证环境：
 ```bash
 python test_env.py
 ```
