@@ -7,7 +7,7 @@ from torchvision import transforms
 from torchvision.utils import save_image
 from tqdm import tqdm
 from models.Generator.UNetPPGenerator import UNetPPGenerator
-from models.Discriminator.PatchGAN70Discriminator import Discriminator
+from models.Discriminator.PatchGAN70DIscriminator import Discriminator
 from utils.utils import *
 from utils.ReplayBuffer import ReplayBuffer
 from utils.dataset import RealGhibliDataset
