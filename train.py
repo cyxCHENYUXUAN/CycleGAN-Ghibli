@@ -48,8 +48,8 @@ def save_training_sample(epoch, loader, G_A2B, G_B2A, device, output_dir):
     img_sample_A = torch.cat((real_A.data, fake_B.data, reconstructed_A.data), -1) #水平拼接
     img_sample_B = torch.cat((real_B.data, fake_A.data, reconstructed_B.data), -1)
 
-    save_image(img_sample_A, f"{output_dir}/A_real_fake_recon_{epoch}.png", normalize=True)
-    save_image(img_sample_B, f"{output_dir}/B_ghibli_fake_recon_{epoch}.png", normalize=True)
+    save_image(img_sample_A, f"{output_dir}/sample_Real-Ghibli-Real_e{epoch}.png", normalize=True)      #左边：原始照片，中间：生成的Ghibli风格图片，右边：重构的照片（将中间的生成的Ghibli风格图片再输入到另一个生成器G_B2A后得到的结果）
+    save_image(img_sample_B, f"{output_dir}/sample_Ghibli-Real-Ghibli_e{epoch}.png", normalize=True)    #左边：Ghibli风格图片，中间：生成的原始照片，右边：重构的Ghibli风格图片（将中间的生成的原始照片再输入到另一个生成器G_A2B后得到的结果）
     
     # 恢复训练模式
     G_A2B.train()
