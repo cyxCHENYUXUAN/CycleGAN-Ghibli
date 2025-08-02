@@ -3,6 +3,9 @@
 项目使用 CycleGAN 实现真实图片到吉卜力风格的图像转换。使用改进的 UNet++ 作为生成器，PatchGAN 作为判别器，实现了高质量的风格迁移。
 备选的生成器模型包括 UNet、ResNet 和 Transformer，备选的判别器模型包括 PatchGAN 和 Multi-Scale Edge，用于消融实验。
 
+## 项目链接
+- GitHub: https://github.com/cyxCHENYUXUAN/CycleGAN-Ghibli
+
 ## 项目结构
 
 ```
