@@ -4,4 +4,9 @@ torchaudio==2.5.1+cu121
 # Note: The versions above are compatible with CUDA 12.1
 
 numpy==2.1.2
-PIL==11.0.0
+Pillow==10.0.0  # PIL package is actually called Pillow
+matplotlib==3.7.1
+
+# Optional but recommended
+ipython==8.12.0  # For better interactive development
+tqdm==4.65.0    # For progress bars

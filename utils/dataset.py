@@ -5,7 +5,6 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
-import torchvision
 
 class RealGhibliDataset(Dataset):
     def __init__(self, ghibli_dir=None, real_dir=None, transform=None):

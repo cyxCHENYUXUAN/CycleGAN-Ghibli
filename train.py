@@ -72,7 +72,7 @@ def main():
     optimizer_G = optim.Adam(itertools.chain(G_A2B.parameters(), G_B2A.parameters()), lr=LR, betas=(0.5, 0.999))
     optimizer_D = optim.Adam(itertools.chain(D_A.parameters(), D_B.parameters()), lr=LR, betas=(0.5, 0.999))
 
-    # 在 100 epoch 后，学习率开始线性衰减到0
+    #在100epoch 后，学习率开始线性衰减到0
     N_EPOCHS_DECAY = EPOCHS // 2
     lr_scheduler_G = optim.lr_scheduler.LambdaLR(optimizer_G, lr_lambda=lambda epoch: 1.0 - max(0, epoch + 1 - N_EPOCHS_DECAY) / (EPOCHS - N_EPOCHS_DECAY))
     lr_scheduler_D = optim.lr_scheduler.LambdaLR(optimizer_D, lr_lambda=lambda epoch: 1.0 - max(0, epoch + 1 - N_EPOCHS_DECAY) / (EPOCHS - N_EPOCHS_DECAY))
@@ -86,13 +86,13 @@ def main():
     # TEST_GHIBLI_DIR = "Data/dataset/testB_ghibli"
     # TEST_REAL_DIR = "Data/dataset/testA"
     train_transforms = transforms.Compose([
-            transforms.Resize((128, 128)),
+            transforms.Resize((IMG_SIZE, IMG_SIZE)),
             transforms.RandomHorizontalFlip(),  # 随机水平翻转
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]) # 将图片像素值归一化到[-1, 1]
         ])
     dataset = RealGhibliDataset(ghibli_dir=GHIBLI_DIR, real_dir=REAL_DIR, transform=train_transforms)
-    train_loader = DataLoader(dataset=dataset,batch_size=1,shuffle=True,num_workers=2,drop_last=True)
+    train_loader = DataLoader(dataset=dataset,batch_size=1,shuffle=True,num_workers=0,drop_last=True)
     # test_transforms = transforms.Compose([
     #         transforms.Resize((IMG_SIZE, IMG_SIZE)),
     #         transforms.ToTensor(),
@@ -137,7 +137,7 @@ def main():
         D_A.train()
         D_B.train()
 
-        for i,batch in enumerate(train_loader):
+        for i,batch in enumerate(progress_bar):
             real_A = batch['real'].to(DEVICE)
             real_B = batch['ghibli'].to(DEVICE)
 
