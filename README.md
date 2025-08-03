@@ -72,7 +72,7 @@ python test_env.py
 cd utlis
 python dataset.py
 ```
-如果一切正常，会显示一对真实图片和吉卜力风格图片的对比。（需取消注释 `dataset.py` 中的 `if __name__ == '__main__` 函数）
+如果一切正常，会显示一对真实图片和吉卜力风格图片的对比。（需取消注释 `dataset.py` 中的 `if __name__ == '__main__'` 函数）
 
 ## 训练模型
 
